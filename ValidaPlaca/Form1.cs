@@ -13,6 +13,8 @@ namespace ValidaPlaca
                 MessageBox.Show("Placa Válida");
             else
                 MessageBox.Show("Placa Inválida");
+
+            Database.SalvarPlacaDeCarro(txtPlaca.Text);
         }
 
         private bool ValidaPlaca(string placa)
