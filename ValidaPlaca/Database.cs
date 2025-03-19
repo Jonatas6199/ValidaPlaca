@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace ValidaPlaca
 {
@@ -46,6 +47,26 @@ namespace ValidaPlaca
             }
             return placas;
            
+        }
+
+        public static bool ExistePlaca(string placa)
+        {
+            string stringDeConexao = "Server=localhost;Port=3306;User Id=root" +
+                  "; database=ti_113_windowsforms;";
+            MySqlConnection conexao = new MySqlConnection(stringDeConexao);
+            conexao.Open();
+
+            string query = "select * from placadecarro where Placa = @placa";
+            MySqlCommand cmd = conexao.CreateCommand();
+            cmd.CommandText = query;
+            cmd.Parameters.AddWithValue("@placa", placa);
+            MySqlDataReader conteudo = cmd.ExecuteReader();
+
+            if (conteudo.Read())
+                return true;
+            else
+                return false;
+            
         }
 
     }

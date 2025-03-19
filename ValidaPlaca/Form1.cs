@@ -11,6 +11,12 @@ namespace ValidaPlaca
         {
             if (ValidaPlaca(txtPlaca.Text))
             {
+                if (Database.ExistePlaca(txtPlaca.Text))
+                {
+                    MessageBox.Show("Placa já existente!","Erro",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 Database.SalvarPlacaDeCarro(txtPlaca.Text);
                 MessageBox.Show("Placa Válida");
                 AtualizarListView();

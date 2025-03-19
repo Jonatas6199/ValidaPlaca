@@ -32,7 +32,6 @@
             btnValidar = new Button();
             lvPlacas = new ListView();
             label1 = new Label();
-            Placas = new ColumnHeader();
             SuspendLayout();
             // 
             // txtPlaca
@@ -54,17 +53,19 @@
             // 
             // lvPlacas
             // 
-            lvPlacas.Columns.AddRange(new ColumnHeader[] { Placas });
-            lvPlacas.Location = new Point(41, 172);
+            lvPlacas.FullRowSelect = true;
+            lvPlacas.GridLines = true;
+            lvPlacas.Location = new Point(73, 172);
             lvPlacas.Name = "lvPlacas";
-            lvPlacas.Size = new Size(245, 97);
+            lvPlacas.Size = new Size(168, 130);
             lvPlacas.TabIndex = 2;
             lvPlacas.UseCompatibleStateImageBehavior = false;
+            lvPlacas.View = View.List;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(94, 154);
+            label1.Location = new Point(73, 154);
             label1.Name = "label1";
             label1.Size = new Size(40, 15);
             label1.TabIndex = 3;
@@ -92,6 +93,5 @@
         private Button btnValidar;
         private ListView lvPlacas;
         private Label label1;
-        private ColumnHeader Placas;
     }
 }
