@@ -30,6 +30,9 @@
         {
             txtPlaca = new TextBox();
             btnValidar = new Button();
+            lvPlacas = new ListView();
+            label1 = new Label();
+            Placas = new ColumnHeader();
             SuspendLayout();
             // 
             // txtPlaca
@@ -49,15 +52,36 @@
             btnValidar.UseVisualStyleBackColor = true;
             btnValidar.Click += btnValidar_Click;
             // 
+            // lvPlacas
+            // 
+            lvPlacas.Columns.AddRange(new ColumnHeader[] { Placas });
+            lvPlacas.Location = new Point(41, 172);
+            lvPlacas.Name = "lvPlacas";
+            lvPlacas.Size = new Size(245, 97);
+            lvPlacas.TabIndex = 2;
+            lvPlacas.UseCompatibleStateImageBehavior = false;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(94, 154);
+            label1.Name = "label1";
+            label1.Size = new Size(40, 15);
+            label1.TabIndex = 3;
+            label1.Text = "Placas";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(345, 178);
+            ClientSize = new Size(345, 328);
+            Controls.Add(label1);
+            Controls.Add(lvPlacas);
             Controls.Add(btnValidar);
             Controls.Add(txtPlaca);
             Name = "Form1";
             Text = "Valida Placa de Carro";
+            Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -66,5 +90,8 @@
 
         private TextBox txtPlaca;
         private Button btnValidar;
+        private ListView lvPlacas;
+        private Label label1;
+        private ColumnHeader Placas;
     }
 }
