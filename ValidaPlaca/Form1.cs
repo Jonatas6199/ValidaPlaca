@@ -5,6 +5,7 @@ namespace ValidaPlaca
         public Form1()
         {
             InitializeComponent();
+     
         }
 
         private void btnValidar_Click(object sender, EventArgs e)
@@ -44,7 +45,6 @@ namespace ValidaPlaca
         private void AtualizarListView()
         {
             lvPlacas.Items.Clear();
-
             List<string> placas = Database.ListaPlacas();
 
             foreach (string placa in placas)

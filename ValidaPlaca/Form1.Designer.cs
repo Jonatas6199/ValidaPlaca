@@ -31,7 +31,8 @@
             txtPlaca = new TextBox();
             btnValidar = new Button();
             lvPlacas = new ListView();
-            label1 = new Label();
+            columnHeader1 = new ColumnHeader();
+            lblPlacas = new Label();
             SuspendLayout();
             // 
             // txtPlaca
@@ -53,30 +54,35 @@
             // 
             // lvPlacas
             // 
+            lvPlacas.Columns.AddRange(new ColumnHeader[] { columnHeader1 });
             lvPlacas.FullRowSelect = true;
             lvPlacas.GridLines = true;
             lvPlacas.Location = new Point(73, 172);
             lvPlacas.Name = "lvPlacas";
-            lvPlacas.Size = new Size(168, 130);
+            lvPlacas.Size = new Size(167, 130);
             lvPlacas.TabIndex = 2;
             lvPlacas.UseCompatibleStateImageBehavior = false;
-            lvPlacas.View = View.List;
+            lvPlacas.View = View.Details;
             // 
-            // label1
+            // columnHeader1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(73, 154);
-            label1.Name = "label1";
-            label1.Size = new Size(40, 15);
-            label1.TabIndex = 3;
-            label1.Text = "Placas";
+            columnHeader1.Text = "Placa";
+            columnHeader1.Width = 130;
+            // 
+            // lblPlacas
+            // 
+            lblPlacas.AutoSize = true;
+            lblPlacas.Location = new Point(73, 154);
+            lblPlacas.Name = "lblPlacas";
+            lblPlacas.Size = new Size(0, 15);
+            lblPlacas.TabIndex = 3;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(345, 328);
-            Controls.Add(label1);
+            Controls.Add(lblPlacas);
             Controls.Add(lvPlacas);
             Controls.Add(btnValidar);
             Controls.Add(txtPlaca);
@@ -92,6 +98,7 @@
         private TextBox txtPlaca;
         private Button btnValidar;
         private ListView lvPlacas;
-        private Label label1;
+        private Label lblPlacas;
+        private ColumnHeader columnHeader1;
     }
 }
